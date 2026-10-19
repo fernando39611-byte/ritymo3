@@ -1,0 +1,220 @@
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(13, 3, 48);
+    color: white;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+header {
+    background-color: rgb(13, 3, 48);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 20px 40px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.logo-area img {
+    width: 200px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* =========================
+   MENU
+========================= */
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    font-family: 'Franklin Gothic Medium',
+                 'Arial Narrow', Arial, sans-serif;
+}
+
+.menu a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background-color: deeppink;
+    transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* =========================
+   TÍTULO
+========================= */
+
+.descricao {
+    font-family: 'Franklin Gothic Medium',
+                 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    font-size: 47px;
+    margin-top: 20px;
+}
+
+/* =========================
+   BOTÃO WHATSAPP
+========================= */
+
+.botao-whatsapp {
+    width: min(300px, calc(100% - 40px));
+    min-height: 60px;
+    font-family: 'Franklin Gothic Medium',
+                 'Arial Narrow', Arial, sans-serif;
+
+    margin: 100px auto 0;
+    background-color: rgb(4, 199, 253);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 15px 20px;
+
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    white-space: normal;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.3s ease;
+}
+
+.botao-whatsapp:hover {
+    background-color: rgb(110, 4, 250);
+    box-shadow: 0 0 15px #00C4F7;
+    transform: translateY(-3px);
+}
+
+/* =========================
+   RODAPÉ
+========================= */
+
+.rodape {
+    background-color: rgb(13, 3, 48);
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+/* =========================
+   TABLETS
+========================= */
+
+@media (max-width: 900px) {
+    header {
+        flex-direction: column;
+        padding: 20px;
+        gap: 25px;
+    }
+
+    .logo-area img {
+        width: 180px;
+    }
+
+    .menu {
+        gap: 20px;
+    }
+
+    .descricao {
+        font-size: 38px;
+    }
+
+    .botao-whatsapp {
+        margin-top: 70px;
+    }
+}
+
+/* =========================
+   CELULARES
+========================= */
+
+@media (max-width: 600px) {
+    header {
+        padding: 20px 15px;
+        gap: 25px;
+    }
+
+    .logo-area img {
+        width: 160px;
+    }
+
+    .menu {
+        width: 100%;
+        gap: 18px 22px;
+        justify-content: center;
+    }
+
+    .menu a {
+        font-size: 15px;
+    }
+
+    .descricao {
+        font-size: 30px;
+        line-height: 1.3;
+        padding: 15px 20px;
+        margin-top: 25px;
+    }
+
+    .botao-whatsapp {
+        width: calc(100% - 40px);
+        max-width: 300px;
+        min-height: 55px;
+        margin-top: 60px;
+        padding: 14px 15px;
+        font-size: 19px;
+    }
+
+    .rodape {
+        font-size: 13px;
+        line-height: 1.5;
+        padding: 20px 15px;
+    }
+}

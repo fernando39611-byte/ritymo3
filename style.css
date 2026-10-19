@@ -1,0 +1,357 @@
+
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(13, 3, 48);
+    color: white;
+    font-family: 'Franklin Gothic Medium',
+        'Arial Narrow', Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+header {
+    background-color: rgb(13, 3, 48);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 20px 50px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.logo-area img {
+    width: 255px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* =========================
+   MENU
+========================= */
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    font-family: 'Franklin Gothic Medium',
+        'Arial Narrow', Arial, sans-serif;
+}
+
+.menu a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background-color: deeppink;
+    transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* =========================
+   BOTÕES DE LOGIN
+========================= */
+
+.botoes-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.botao-conta,
+.botao-entrar {
+    width: 120px;
+    min-height: 48px;
+    padding: 10px 12px;
+    background-color: rgb(4, 199, 253);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.botao-conta:hover,
+.botao-entrar:hover {
+    background-color: rgb(110, 4, 250);
+    box-shadow: 0 0 15px #00C4F7;
+    transform: translateY(-3px);
+}
+
+/* =========================
+   CONTEÚDO PRINCIPAL
+========================= */
+
+main {
+    width: 100%;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.hero-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    flex: 1;
+    min-width: 0;
+}
+
+.subtitulo {
+    font-size: 20px;
+    color: white;
+    line-height: 1.5;
+}
+
+.titulo {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif                                                         ;
+    font-size: clamp(34px, 3.8vw, 55px);
+    font-weight: 800;
+    line-height: 1.15;
+    color: white;
+    letter-spacing: -2px;
+    overflow-wrap: anywhere;
+}
+
+.titulo span {
+    color: rgb(4, 199, 253);
+}
+
+/* =========================
+   IMAGEM PRINCIPAL
+========================= */
+
+.hero-imagem {
+    flex: 0 1 38%;
+    min-width: 0;
+}
+
+.hero-imagem img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s ease;
+}
+
+.hero-imagem img:hover {
+    filter: brightness(0) saturate(100%)
+        invert(15%) sepia(100%)
+        saturate(500%) hue-rotate(265deg);
+}
+
+/* =========================
+   BOTÕES PRINCIPAIS
+========================= */
+
+.botoes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.botao-criar,
+.botao-studio {
+    background-color: deeppink;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 16px 20px;
+    font-size: clamp(17px, 2vw, 25px);
+    cursor: pointer;
+    box-shadow: 0 0 12px deeppink;
+    transition: 0.3s ease;
+}
+
+.botao-criar:hover,
+.botao-studio:hover {
+    background-color: rgb(110, 4, 250);
+    box-shadow: 0 0 15px #00C4F7;
+    transform: translateY(-3px);
+}
+
+/* =========================
+   RODAPÉ
+========================= */
+
+.rodape {
+    width: 100%;
+    background-color: rgb(13, 3, 48);
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    padding: 25px 15px;
+    margin-top: 50px;
+}
+
+/* =========================
+   TABLETS
+========================= */
+
+@media (max-width: 1000px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .logo-area img {
+        width: 190px;
+    }
+
+    .menu {
+        gap: 20px;
+    }
+
+    .hero {
+        padding: 35px 25px;
+        gap: 20px;
+    }
+
+    .titulo {
+        letter-spacing: -1px;
+    }
+}
+
+/* =========================
+   CELULARES
+========================= */
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
+        padding: 20px 15px;
+    }
+
+    .logo-area img {
+        width: 180px;
+    }
+
+    .menu {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 18px 22px;
+        font-size: 15px;
+    }
+
+    .botoes-login {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .botao-conta,
+    .botao-entrar {
+        width: 130px;
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 25px;
+        padding: 30px 20px;
+    }
+
+    .hero-texto {
+        width: 100%;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .subtitulo {
+        font-size: 16px;
+    }
+
+    .titulo {
+        width: 100%;
+        font-size: clamp(29px, 8vw, 40px);
+        line-height: 1.2;
+        letter-spacing: -1px;
+        overflow-wrap: anywhere;
+    }
+
+    .hero-imagem {
+        flex: none;
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .botoes {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .botao-criar,
+    .botao-studio {
+        width: 100%;
+        max-width: 320px;
+        font-size: 19px;
+        padding: 15px;
+    }
+
+    .rodape {
+        margin-top: 25px;
+        font-size: 13px;
+        line-height: 1.6;
+    }
+}

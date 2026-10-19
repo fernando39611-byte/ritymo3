@@ -1,0 +1,357 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(13, 3, 48);
+    color: white;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+header {
+    background-color: rgb(13, 3, 48);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 50px;
+    gap: 25px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.logo-area img {
+    width: 240px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+h1 {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    color: aliceblue;
+}
+
+
+/* =========================
+   MENU DE NAVEGAÇÃO
+========================= */
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-family: 'Franklin Gothic Medium',
+                 'Arial Narrow', Arial, sans-serif;
+}
+
+.menu a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    padding-bottom: 5px;
+}
+
+/* Linha animada */
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background-color: deeppink;
+    transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================
+   BOTÕES DE LOGIN
+========================= */
+
+.botoes-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-shrink: 0;
+}
+
+.botao-conta,
+.botao-entrar {
+    width: 150px;
+    min-height: 48px;
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 10px 15px;
+
+    background-color: rgb(4, 199, 253);
+    color: white;
+
+    border: none;
+    border-radius: 15px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    text-align: center;
+    text-decoration: none;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botao-conta:hover,
+.botao-entrar:hover {
+    background-color: rgb(110, 4, 250);
+    box-shadow: 0 0 15px #00C4F7;
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   CONTEÚDO PRINCIPAL
+========================= */
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+/* Título da Biblioteca */
+
+main h1 {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 15px;
+    color: aliceblue;
+}
+
+/* Descrição */
+
+main > p {
+    color: #b8b0d2;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   LISTA DE BATIDAS
+========================= */
+
+.lista-batidas {
+    display: grid;
+
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 260px), 280px)
+    );
+
+    justify-content: center;
+    align-items: stretch;
+
+    gap: 25px;
+    margin-top: 35px;
+    width: 100%;
+}
+
+
+/* =========================
+   CARD DE CADA BATIDA
+========================= */
+
+.card-batida {
+    background: #1b1040;
+
+    border: 1px solid #38265f;
+    border-radius: 16px;
+
+    padding: 20px;
+    min-width: 0;
+    width: 100%;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.card-batida:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 199, 245, 0.12);
+}
+
+
+/* =========================
+   CAPA DA BATIDA
+========================= */
+
+.capa-batida {
+    height: 150px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+    margin-bottom: 18px;
+
+    font-size: 55px;
+    color: #00c7f5;
+
+    background: linear-gradient(
+        135deg,
+        #30146c,
+        #087e9e
+    );
+}
+
+
+/* =========================
+   NOME E INFORMAÇÕES
+========================= */
+
+.card-batida h3 {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card-batida p {
+    color: #b8b0d2;
+    font-size: 14px;
+    margin-bottom: 18px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   PLAYER DE ÁUDIO
+========================= */
+
+.card-batida audio {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   BOTÃO DE DOWNLOAD
+========================= */
+
+.botao-download {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    padding: 12px;
+
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+
+    color: #0d0330;
+    background: #00c7f5;
+
+    border-radius: 9px;
+    transition: 0.3s ease;
+}
+
+.botao-download:hover {
+    background: #8a5cff;
+    color: white;
+    box-shadow: 0 0 15px rgba(138, 92, 255, 0.4);
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 1000px) {
+    header {
+        padding: 20px 25px;
+        flex-wrap: wrap;
+    }
+
+    .logo-area img {
+        width: 180px;
+    }
+
+    .menu {
+        gap: 20px;
+    }
+
+    .botao-conta,
+    .botao-entrar {
+        width: auto;
+        min-width: 100px;
+    }
+}
+
+@media (max-width: 650px) {
+    header {
+        justify-content: center;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .logo-area img {
+        width: 180px;
+    }
+
+    .menu {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .botoes-login {
+        flex-wrap: wrap;
+    }
+
+    main {
+        width: 92%;
+        margin: 35px auto;
+    }
+
+    main h1 {
+        font-size: 28px;
+    }
+
+    .lista-batidas {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 360px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

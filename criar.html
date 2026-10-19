@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritymo - Criar conta</title>
+    <link rel="stylesheet" href="entrar.css">
+</head>
+<body>
+
+    <header>
+        <!-- Logo -->
+        <div class="logo-area">
+            <img src="logo.png" alt="Logo do site" class="logo">
+        </div>
+
+        <!-- Menu -->
+        <nav class="menu">
+            <a href="index.html">Home</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="studio.html">Studio</a>
+            <a href="bibli.html">Biblioteca</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+
+        <!-- Botões -->
+
+            <button class="botao-entrar" type="button"
+                onclick="window.location.href='entrar.html'">
+                Entrar
+            </button>
+        </div>
+    </header>
+
+    <!-- Formulário de cadastro -->
+    <main class="pagina-criar">
+
+        <form class="formulario" id="formCriar">
+
+            <h1>Registre-se</h1>
+            <p>Faça parte do Ritymo!</p>
+
+            <div class="campo">
+                <label for="nome">Nome:</label>
+                <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    placeholder="Digite seu nome"
+                    required
+                >
+            </div>
+
+            <div class="campo">
+                <label for="email">E-mail:</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Digite seu e-mail"
+                    required
+                >
+            </div>
+
+            <div class="campo">
+                <label for="senha">Senha:</label>
+                <input
+                    type="password"
+                    id="senha"
+                    name="senha"
+                    placeholder="Crie uma senha"
+                    required
+                >
+            </div>
+
+            <div class="cadastrar-tudo">
+                <button class="botao-cadastrar" type="submit">
+                    Cadastrar
+                </button>
+            </div>
+
+        </form>
+
+    </main>
+
+    <script>
+        const formulario = document.getElementById("formCriar");
+
+        formulario.addEventListener("submit", function(evento) {
+            evento.preventDefault();
+
+            const nome = document.getElementById("nome").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const senha = document.getElementById("senha").value;
+
+            if (!nome || !email || !senha) {
+                alert("Preencha todos os campos!");
+                return;
+            }
+
+            sessionStorage.setItem("nomeUsuario", nome);
+
+            alert("Você cadastrou no Ritymo!");
+
+            window.location.href = "studio.html";
+        });
+    </script>
+
+</body>
+</html>

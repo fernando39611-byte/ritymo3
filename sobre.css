@@ -1,0 +1,270 @@
+
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(13, 3, 48);
+    font-family: 'Franklin Gothic Medium',
+        'Arial Narrow', Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+header {
+    background-color: rgb(13, 3, 48);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 20px 50px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.logo-area img {
+    width: 240px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* =========================
+   MENU
+========================= */
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    font-family: 'Franklin Gothic Medium',
+        'Arial Narrow', Arial, sans-serif;
+}
+
+.menu a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* Linha animada */
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background-color: deeppink;
+    transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* =========================
+   BOTÕES DE LOGIN
+========================= */
+
+.botao-conta,
+.botao-entrar {
+    width: 150px;
+    min-height: 48px;
+    box-sizing: border-box;
+    margin: 0;
+    background-color: rgb(4, 199, 253);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 15px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.botao-conta:hover,
+.botao-entrar:hover {
+    background-color: rgb(110, 4, 250);
+    box-shadow: 0 0 15px #00C4F7;
+    transform: translateY(-3px);
+}
+
+/* =========================
+   CONTEÚDO SOBRE
+========================= */
+
+.conteudo-sobre {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 30px;
+    font-family: 'Franklin Gothic Medium',
+        'Arial Narrow', Arial, sans-serif;
+}
+
+.conteudo-sobre h1 {
+    color: white;
+    font-size: 52px;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.conteudo-sobre h3 {
+    color: white;
+    font-size: 30px;
+    line-height: 1.6;
+    font-weight: normal;
+    overflow-wrap: break-word;
+}
+
+.conteudo-sobre span {
+    color: deeppink;
+}
+
+/* =========================
+   RODAPÉ
+========================= */
+
+.rodape {
+    background-color: rgb(13, 3, 48);
+    color: white;
+    font-size: 15px;
+    margin-top: 100px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* =========================
+   TABLETS
+========================= */
+
+@media (max-width: 1000px) {
+
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+        gap: 25px;
+    }
+
+    .logo-area img {
+        width: 190px;
+    }
+
+    .menu {
+        gap: 22px;
+        flex-wrap: wrap;
+    }
+
+    .botao-conta,
+    .botao-entrar {
+        width: 130px;
+    }
+
+    .conteudo-sobre h1 {
+        font-size: 44px;
+    }
+
+    .conteudo-sobre h3 {
+        font-size: 26px;
+    }
+}
+
+/* =========================
+   CELULARES
+========================= */
+
+@media (max-width: 600px) {
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 15px;
+        gap: 22px;
+    }
+
+    .logo-area {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .logo-area img {
+        width: 180px;
+    }
+
+    .menu {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px 22px;
+        font-size: 15px;
+    }
+
+    .botao-conta,
+    .botao-entrar {
+        width: 130px;
+        min-height: 44px;
+        font-size: 15px;
+    }
+
+    /* Texto adaptado para a largura do celular */
+
+    .conteudo-sobre {
+        padding: 30px 20px;
+        text-align: left;
+    }
+
+    .conteudo-sobre h1 {
+        font-size: clamp(32px, 9vw, 42px);
+        margin-bottom: 20px;
+    }
+
+    .conteudo-sobre h3 {
+        font-size: 19px;
+        line-height: 1.7;
+        font-weight: normal;
+        overflow-wrap: break-word;
+    }
+
+    .conteudo-sobre span {
+        color: deeppink;
+    }
+
+    .rodape {
+        margin-top: 40px;
+        padding: 20px 15px;
+        font-size: 13px;
+        line-height: 1.6;
+    }
+}
